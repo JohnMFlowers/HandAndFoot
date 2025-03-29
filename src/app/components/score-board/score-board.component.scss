@@ -1,0 +1,75 @@
+.score-board-container {
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #334155;
+  }
+  
+  .score-table-wrapper {
+    overflow-x: auto;
+  }
+  
+  .score-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+    
+    th, td {
+      padding: 0.75rem;
+      text-align: center;
+      border: 1px solid #e2e8f0;
+    }
+    
+    th {
+      background-color: #f8fafc;
+      font-weight: 600;
+      color: #475569;
+    }
+    
+    .player-col {
+      width: 25%;
+      text-align: left;
+    }
+    
+    .round-col {
+      width: 10%;
+    }
+    
+    .total-col {
+      width: 15%;
+      background-color: #f1f5f9;
+    }
+    
+    .player-name {
+      font-weight: 500;
+      text-align: left;
+    }
+    
+    .score {
+      &.current-round {
+        background-color: #ecfdf5;
+      }
+      
+      &.completed-round {
+        background-color: #fff;
+      }
+      
+      &.future-round {
+        background-color: #f8fafc;
+        color: #94a3b8;
+      }
+    }
+    
+    .total-score {
+      font-weight: 600;
+      background-color: #f1f5f9;
+    }
+  }
