@@ -3,9 +3,9 @@
 <table>
   <tr>
     @for (playerGame of game.playerGames; track playerGame.name) {
-      <td>
-        <app-player-game [playerGame]="playerGame"></app-player-game>
-      </td>
+    <td style="border: none">
+      <app-player-game [playerGame]="playerGame"></app-player-game>
+    </td>
     }
   </tr>
 </table>

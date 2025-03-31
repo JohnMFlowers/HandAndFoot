@@ -1,15 +1,13 @@
 <tr>
-    <td>
-        {{ item.name }}
-    </td>
-    <td>
-        @if (item.valueType === 'number') {
-            <input type="number" [(ngModel)]="item.value" />
-        } @else {
-            <input type="checkbox" [(ngModel)]="item.value" />
-        }
-    </td>
-    <td>
-        {{ item.total }}
-    </td>
+  <td>{{ item.name }}</td>
+  <td>
+    @if (item.valueType === 'number') {
+    <input type="number" [value]="item.value" (input)="onInput($event)" />
+    } @else {
+    <input type="checkbox" [checked]="item.value" (input)="onCheck($event)" />
+    }
+  </td>
+  <td>
+    {{ item.formattedTotal }}
+  </td>
 </tr>

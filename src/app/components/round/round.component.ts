@@ -6,7 +6,7 @@ import { ItemComponent } from '../item/item.component';
   selector: 'app-round',
   imports: [ItemComponent],
   templateUrl: './round.component.html',
-  styleUrl: './round.component.scss'
+  styleUrl: './round.component.scss',
 })
 export class RoundComponent {
   @Input() round!: Round;

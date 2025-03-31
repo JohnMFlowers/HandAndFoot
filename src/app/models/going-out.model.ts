@@ -1,4 +1,4 @@
-import { ItemBase, ItemValueType } from './item.model';
+import { ItemBase, ItemValueType } from './item-base.model';
 
 export class GoingOut extends ItemBase {
   override name = 'Going Out';
