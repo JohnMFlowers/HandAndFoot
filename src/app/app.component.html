@@ -1,30 +1,11 @@
 <div class="app-container">
   <header class="app-header">
-    <h1 class="app-title">Hand & Foot Score Tracker</h1>
-    @if (gameInProgress()) {
-      <button 
-        type="button" 
-        (click)="resetGame()" 
-        class="btn-reset"
-      >
-        Reset Game
-      </button>
-    }
+    <h1 class="app-title">Hand & Foot Score Keeper</h1>
   </header>
   
   <main class="app-content">
-    @if (!gameInProgress()) {
-      <app-game-setup />
-    } @else {
-      <app-score-board />
-      
-      @if (!gameFinished()) {
-        <app-score-input />
-      } @else {
-        <!-- <app-game-results /> -->
-      }
-      
-      <!-- <app-scoring-reference /> -->
+    @for (game of games; track game.id) {
+      <app-game [game]="games[$index]" [gameNumber]="$index"></app-game>
     }
   </main>
   

@@ -1,0 +1,4 @@
+{{ playerGame.name }}
+@for (round of playerGame.rounds; track round.id) {
+  <app-round [round]="round"></app-round>
+}

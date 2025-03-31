@@ -1,39 +1,34 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { GameSetupComponent } from './components/game-setup/game-setup.component';
-import { ScoreBoardComponent } from './components/score-board/score-board.component';
-import { ScoreInputComponent } from './components/score-input/score-input.component';
-// import { GameResultsComponent } from './components/game-results/game-results.component';
-// import { ScoringReferenceComponent } from './shared/components/scoring-reference/scoring-reference.component';
-import { ScoreTrackerService } from './services/score-tracker.service';
+import { GameComponent } from './components/game/game.component';
+import { Game } from './models/game.model';
+import { PlayerGame } from './models/player-Game';
+import { Round } from './models/round.model';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
     CommonModule,
-    GameSetupComponent,
-    ScoreBoardComponent,
-    ScoreInputComponent/* ,
-    GameResultsComponent,
-    ScoringReferenceComponent */
+    GameComponent
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  private scoreTracker = inject(ScoreTrackerService);
-  
-  // Expose readonly signals from the service
-  protected gameInProgress = this.scoreTracker.gameInProgress;
-  protected gameFinished = this.scoreTracker.gameFinished;
-  
-  /**
-   * Reset the game
-   */
-  resetGame(): void {
-    if (confirm('Are you sure you want to reset the game? All scores will be lost.')) {
-      this.scoreTracker.resetGame();
-    }
+export class AppComponent implements OnInit {
+  games: Game[] = [];
+
+  ngOnInit(): void {
+    const game = new Game();
+    game.numberRounds = 3;
+    ['Player 1', 'Player 2', 'Player 3'].forEach(name => {
+      const playerGame = new PlayerGame();
+      playerGame.name = name;
+      for (let i = 0; i < game.numberRounds; i++) {
+        const round = new Round();
+        playerGame.rounds.push(round);
+      }
+      game.playerGames.push(playerGame);
+    });
   }
 }
