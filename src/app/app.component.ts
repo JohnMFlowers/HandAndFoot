@@ -30,5 +30,6 @@ export class AppComponent implements OnInit {
       }
       game.playerGames.push(playerGame);
     });
+    this.games.push(game);
   }
 }

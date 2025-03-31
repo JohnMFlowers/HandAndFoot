@@ -1,3 +1,5 @@
 <table>
-  <app-item *ngFor="let item of round.items" [item]="item"></app-item>
+  @for ( item of round.items; track item.id) {
+  <app-item [item]="item"></app-item>
+  }
 </table>

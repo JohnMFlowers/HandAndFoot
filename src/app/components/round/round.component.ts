@@ -10,4 +10,5 @@ import { ItemComponent } from '../item/item.component';
 })
 export class RoundComponent {
   @Input() round!: Round;
+  json = JSON;
 }
