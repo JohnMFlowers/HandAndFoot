@@ -4,6 +4,10 @@
   <tr>
     @for (playerGame of game.playerGames; track playerGame.name) {
     <td style="border: none">
+      <div style="text-align: center">
+        <b>Team #{{ $index + 1 }}: </b>
+        <input style="width: 200px" />
+      </div>
       <app-player-game [playerGame]="playerGame"></app-player-game>
     </td>
     }

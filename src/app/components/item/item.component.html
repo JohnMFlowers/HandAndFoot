@@ -2,10 +2,10 @@
   <td>{{ item.name }}</td>
   <td>
     @if (item.valueType === 'number') {
-    <input [value]="item.value" (input)="onInput($event)" />
+    <input class="score-input" [value]="item.value" (input)="onInput($event)" />
     } @else if (item.valueType === 'boolean') {
     <input
-      style="margin-left: -23px"
+      class="score-input"
       type="checkbox"
       [checked]="item.value"
       (input)="onCheck($event)"

@@ -1,4 +1,3 @@
-<h3>{{ playerGame.name }}</h3>
 @for (round of playerGame.rounds; track round.id) {
 <b>Round {{ $index + 1 }}</b>
 <app-round [round]="round"></app-round>
