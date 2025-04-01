@@ -3,9 +3,9 @@
   <td>
     @if (item.valueType === 'number') {
     <input type="number" [value]="item.value" (input)="onInput($event)" />
-    } @else {
+    } @else if (item.valueType === 'boolean') {
     <input type="checkbox" [checked]="item.value" (input)="onCheck($event)" />
-    }
+    } @else { &nbsp; }
   </td>
   <td>
     {{ item.formattedTotal }}

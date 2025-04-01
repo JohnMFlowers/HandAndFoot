@@ -2,14 +2,14 @@
   <header class="app-header">
     <h1 class="app-title">Hand & Foot Score Keeper</h1>
   </header>
-  
+
   <main class="app-content">
     @for (game of games; track game.id) {
-      <app-game [game]="games[$index]" [gameNumber]="$index"></app-game>
+    <app-game [game]="games[$index]" [gameNumber]="$index"></app-game>
     }
   </main>
-  
+
   <footer class="app-footer">
-    <p>© 2025 Hand & Foot Score Tracker</p>
+    <p>© 2025 John Flowers</p>
   </footer>
 </div>

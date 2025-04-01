@@ -6,6 +6,7 @@ import { PerfectCut } from './perfect-cut.model';
 import { PointsHeld } from './points-held.model';
 import { PointsPlayed } from './points-playted.model';
 import { RedThrees } from './red-threes.model';
+import { RoundTotal } from './round-total';
 
 let nextId = 0;
 
@@ -18,11 +19,7 @@ export class Round {
     new DirtyCanastas(),
     new PointsPlayed(),
     new PointsHeld(),
+    new RoundTotal(),
   ];
   id = nextId++;
-  get formattedTotal() {
-    const formatter = new Intl.NumberFormat('en-US');
-    const total = this.items.reduce((total, item) => total + item.total, 0);
-    return formatter.format(total);
-  }
 }

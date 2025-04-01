@@ -1,4 +1,4 @@
-export type ItemValueType = 'number' | 'boolean';
+export type ItemValueType = 'number' | 'boolean' | 'total';
 
 export interface Item {
   id: number;
