@@ -4,7 +4,7 @@ export interface Item {
   id: number;
   name: string;
   valueType: ItemValueType;
-  value: number | boolean;
+  value?: number | boolean;
   readonly total: number;
   multiplier: number;
   formattedTotal: string;
@@ -17,15 +17,15 @@ export class ItemBase implements Item {
   name = 'Base Item';
   multiplier = 100;
   valueType: ItemValueType = 'number';
-  private _value = 0;
-  get value() {
+  private _value?: number;
+  get value(): number | undefined {
     return this._value;
   }
   set value(value: number) {
     this._value = value;
   }
   get total() {
-    return this._value * this.multiplier;
+    return (this._value ?? 0) * this.multiplier;
   }
   get formattedTotal() {
     const formatter = new Intl.NumberFormat('en-US');
