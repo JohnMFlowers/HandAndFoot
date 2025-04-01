@@ -16,6 +16,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class ItemComponent {
   @Input() item!: ItemBase;
+  @Input() isLast = false;
 
   constructor(private changeDetectorRef: ChangeDetectorRef) {}
 

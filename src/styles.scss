@@ -26,6 +26,11 @@ table {
 td {
   margin: 0;
   width: 100px;
-  border-collapse: collapse;
-  border: 1px solid gray;
+  border-top: 1px solid gray;
+  border-right: 1px solid gray;
+  border-left: 1px solid gray;
+}
+
+.bottom-row-border {
+  border-bottom: 1px solid gray;
 }

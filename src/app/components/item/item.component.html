@@ -1,10 +1,15 @@
-<tr>
+<tr [class]="isLast ? 'bottom-row-border' : ''">
   <td>{{ item.name }}</td>
   <td>
     @if (item.valueType === 'number') {
-    <input type="number" [value]="item.value" (input)="onInput($event)" />
+    <input [value]="item.value" (input)="onInput($event)" />
     } @else if (item.valueType === 'boolean') {
-    <input type="checkbox" [checked]="item.value" (input)="onCheck($event)" />
+    <input
+      style="margin-left: -23px"
+      type="checkbox"
+      [checked]="item.value"
+      (input)="onCheck($event)"
+    />
     } @else { &nbsp; }
   </td>
   <td>

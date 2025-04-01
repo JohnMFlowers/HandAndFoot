@@ -1,13 +1,5 @@
 <table style="margin: 3px 5px 10px 0">
   @for ( item of round.items; track item.id) {
-  <app-item [item]="item"></app-item>
+  <app-item [item]="item" [isLast]="$last"></app-item>
   }
-  <!-- <tr>
-    <td style="text-align: right">
-      <strong>Total:</strong>
-    </td>
-    <td style="text-align: right">
-      {{ round.formattedTotal }}
-    </td>
-  </tr> -->
 </table>
