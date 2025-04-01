@@ -2,7 +2,12 @@
   <td>{{ item.name }}</td>
   <td>
     @if (item.valueType === 'number') {
-    <input class="score-input" [value]="item.value" (input)="onInput($event)" />
+    <input
+      class="score-input"
+      type="number"
+      [value]="item.value"
+      (input)="onInput($event)"
+    />
     } @else if (item.valueType === 'boolean') {
     <input
       class="score-input"
